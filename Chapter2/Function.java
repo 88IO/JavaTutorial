@@ -14,7 +14,7 @@ class QuadraticEqu {
 
     // 計算結果を返却
     public long calc(long n) {
-        return (long)(a*Math.pow(n, 2) + b*n + c);
+        return (long)(a * Math.pow(n, 2) + b * n + c);
     }
 }
 
@@ -24,13 +24,13 @@ class Derivada {
 
     // 係数の格納(引数に２次方程式のクラスを投げる)
     public Derivada(QuadraticEqu f) {
-        this.a = f.a*2;
+        this.a = f.a * 2;
         this.b = f.b;
     }
 
     // 計算結果を返却
     public long calc(long n) {
-        return a*n + b;
+        return a * n + b;
     }
 }
 
