@@ -41,7 +41,6 @@ class Function {
         Scanner stdIn = new Scanner(System.in);
 
         System.out.println("関 数 f(x) = ax ^2 + bx + c を 生 成 し ま す 。");
-        // input
         System.out.print("a: ");
         long a = stdIn.nextLong();
         System.out.print("b: ");
