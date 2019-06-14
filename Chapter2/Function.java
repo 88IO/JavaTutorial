@@ -9,7 +9,7 @@ class QuadraticEqu {
         this.c = c;
     }
 
-    public long solve(long n) {
+    public long calc(long n) {
         return (long)(a*Math.pow(n, 2) + b*n + c);
     }
 }
@@ -22,7 +22,7 @@ class Derivada {
         this.b = f.b;
     }
 
-    public long solve(long n) {
+    public long calc(long n) {
         return a*n + b;
     }
 }
@@ -45,8 +45,8 @@ class Function {
 
         QuadraticEqu f = new QuadraticEqu(a, b, c);
 
-        System.out.println(String.format("f(%d) = %d", n, f.solve(n)));
-        System.out.println(String.format("f'(%d) = %d", n, new Derivada(f).solve(n)));
+        System.out.println(String.format("f(%d) = %d", n, f.calc(n)));
+        System.out.println(String.format("f'(%d) = %d", n, new Derivada(f).calc(n)));
     }
 }
 
