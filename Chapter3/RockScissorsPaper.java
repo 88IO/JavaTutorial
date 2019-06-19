@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 class RockScissorsPaper {
     public static void main(String[] args) {
-        // 入力
+        // 入力 乱数生成
         Scanner stdIn = new Scanner(System.in);
         Random rand = new Random();
 
@@ -13,7 +13,7 @@ class RockScissorsPaper {
         System.out.print("じゃんけんぽん！（0-グー/1-チョキ/2-パー）：");
         int myself = stdIn.nextInt();
 
-        // お互いの手
+        // お互いの手を出力
         System.out.println("プレイヤーの手：" + num2hand(myself));
         System.out.println("コンピューターの手：" + num2hand(opponent));
 
