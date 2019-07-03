@@ -4,7 +4,7 @@ class PrintFlowerNumber {
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
-        String[][] flowerNum = new String[10][];
+        String[][] flowerNum = new String[10][5];
         String[] strOut = {"", "", "", "", ""};
 
         flowerNum[0] = new String[]{"＊＊＊",
@@ -70,5 +70,7 @@ class PrintFlowerNumber {
         for (String s : strOut) {
             System.out.println(s);
         }
+
+        stdIn.close();
     }
 }
