@@ -5,7 +5,6 @@ class PrintFlowerNumber {
         Scanner stdIn = new Scanner(System.in);
 
         String[][] flowerNum = new String[10][5];
-        String[] strOut = {"", "", "", "", ""};
 
         flowerNum[0] = new String[]{"＊＊＊",
                                     "＊　＊",
@@ -61,6 +60,15 @@ class PrintFlowerNumber {
         System.out.print("数字を入力してください：");
         String[] strArray = stdIn.next().split("");
 
+        for (int i = 0; i < 5; i++) {
+            for (String s : strArray) {
+                System.out.print(flowerNum[Integer.parseInt(s)][i] + " ");
+            }
+            System.out.println();
+        }
+        // 出力行ごとに格納してから出力
+        /*
+        String[] strOut = {"", "", "", "", ""};
         for (String s : strArray) {
             for (int i = 0; i < 5; i++){
                 strOut[i] += (flowerNum[Integer.parseInt(s)][i] + " ") ;
@@ -70,7 +78,7 @@ class PrintFlowerNumber {
         for (String s : strOut) {
             System.out.println(s);
         }
-
+        */
         stdIn.close();
     }
 }
