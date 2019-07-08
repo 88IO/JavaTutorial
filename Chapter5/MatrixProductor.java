@@ -38,7 +38,7 @@ class MatrixProductor {
         for (int r = 0; r < matrix_a.length; r++) {
             for (int c = 0; c < matrix_a.length; c++) {
                 for (int i = 0; i < matrix_b.length; i++) {
-                    matrix_c[r][c] += matrix_a[r][i] * matrix_b[i][r];
+                    matrix_c[r][c] += matrix_a[r][i] * matrix_b[i][c];
                 }
             }
         }
