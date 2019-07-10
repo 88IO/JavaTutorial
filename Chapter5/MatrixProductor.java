@@ -18,6 +18,8 @@ class MatrixProductor {
 
         int[][] matrix_c = productMatrix(matrix_a, matrix_b);
 
+        System.out.println(Arrays.deepToString(matrix_a));
+        System.out.println(Arrays.deepToString(matrix_b));
         System.out.println(Arrays.deepToString(matrix_c));
     }
 
