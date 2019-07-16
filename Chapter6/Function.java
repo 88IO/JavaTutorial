@@ -12,7 +12,7 @@ class Function {
         int n = setNumber("n");
 
         System.out.println(String.format("f(%d) = %d", n, quadraticEqu(a, b, c, n)));
-        System.out.println(String.format("f'(%d) = %d", n, linearEqu(2 * a, b, n)));
+        System.out.println(String.format("f'(%d) = %d", n, linearEqu(a, b, n)));
     }
 
     static int setNumber(String s) {
@@ -25,6 +25,6 @@ class Function {
     }
 
     static int  linearEqu(int a, int b, int n) {
-        return (int)(a * n + b);
+        return 2 * a * n + b;
     }
 }
