@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 class Complex {
     private double real;
     private double imaginary;
@@ -15,21 +17,32 @@ class Complex {
         return this.imaginary;
     }
 
-     private String formatNum(double n, boolean isInPlus) {
-        if (n > 0) {
-            if (isInPlus)  return String.format("+ %.1f", n);
-           return String.format("%.1f", n);
-        }  else if (n < 0) {
-            return String.format("- %.1f", Math.abs(n));
-        }  else {
-            return "";
+    private String dbl2str(double d, boolean isInPlus) {
+        if (d > 0) {
+            if (isInPlus)  return "+ " + BigDecimal.valueOf(d).toPlainString();
+            return BigDecimal.valueOf(d).toPlainString();
+        } else if (d < 0) {
+            return "- " + BigDecimal.valueOf(Math.abs(d)).toPlainString();
+        } else {
+            return "0";
         }
     }
 
     String description() {
-        return String.format("%s %si",
-                formatNum(this.real, false),
-                formatNum(this.imaginary, this.real != 0 ? true : false));
+        if (this.real == 0) {
+            if (this.imaginary == 0) {
+                return "0";
+            } else {
+                return dbl2str(this.imaginary, false) + "i";
+            }
+        } else {
+            if (this.imaginary == 0) {
+                return dbl2str(this.real, false);
+            } else {
+                return dbl2str(this.real, false) + " "
+                        + dbl2str(this.imaginary, true) + "i";
+            }
+        }
     }
 
     void add(Complex c) {
