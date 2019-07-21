@@ -1,17 +1,17 @@
 class IntArray {
-    int[] intarray;
+    int[] array;
 
     IntArray(int n) {
-        intarray = new int[n];
+        array = new int[n];
     }
-    IntArray(int[] intarray) {
-        this.intarray = new int[intarray.length];
-        System.arraycopy(intarray, 0, this.intarray, 0, intarray.length);
+    IntArray(int[] array) {
+        this.array = new int[array.length];
+        System.arraycopy(array, 0, this.array, 0, array.length);
     }
 
     int sum() {
         int sum = 0;
-        for (int n : this.intarray) {
+        for (int n : this.array) {
             sum += n;
         }
         return sum;
@@ -19,35 +19,35 @@ class IntArray {
 
     String description() {
         String elem = "[";
-        for (int i = 0; i < this.intarray.length; i++) {
-            elem += String.format("%d" + ((i == this.intarray.length -1) ? "]" : ", "), this.intarray[i]);
+        for (int i = 0; i < this.array.length; i++) {
+            elem += String.format("%d" + ((i == this.array.length -1) ? "]" : ", "), this.array[i]);
         }
         return elem;
     }
 
     void sort() {
-        for (int i = 0; i < this.intarray.length - 1; i++) {
-            for (int j = 0; j < this.intarray.length - 1; j++) {
-                if (this.intarray[j] > this.intarray[j + 1]) {
-                    int tmp = this.intarray[j];
-                    this.intarray[j] = this.intarray[j + 1];
-                    this.intarray[j + 1] = tmp;
+        for (int i = 0; i < this.array.length - 1; i++) {
+            for (int j = 0; j < this.array.length - 1; j++) {
+                if (this.array[j] > this.array[j + 1]) {
+                    int tmp = this.array[j];
+                    this.array[j] = this.array[j + 1];
+                    this.array[j + 1] = tmp;
                 }
             }
         }
     }
 
     void reverse() {
-        for (int i = 0; i < this.intarray.length / 2; i++) {
-            int tmp = this.intarray[i];
-            this.intarray[i] = this.intarray[this.intarray.length -1 - i];
-            this.intarray[this.intarray.length - 1 - i] = tmp;
+        for (int i = 0; i < this.array.length / 2; i++) {
+            int tmp = this.array[i];
+            this.array[i] = this.array[this.array.length -1 - i];
+            this.array[this.array.length - 1 - i] = tmp;
         }
     }
 
     int max() {
-        int max = this.intarray[0];
-        for (int n : this.intarray) {
+        int max = this.array[0];
+        for (int n : this.array) {
             if (max < n) {
                 max = n;
             }
@@ -56,8 +56,8 @@ class IntArray {
     }
 
     int min() {
-        int min = this.intarray[0];
-        for (int n : this.intarray) {
+        int min = this.array[0];
+        for (int n : this.array) {
             if (min > n) {
                 min = n;
             }
@@ -66,29 +66,29 @@ class IntArray {
     }
 
     void add(int n) {
-        int[] new_array = new int[this.intarray.length + 1];
+        int[] new_array = new int[this.array.length + 1];
 
-        System.arraycopy(this.intarray, 0, new_array, 0, this.intarray.length);
+        System.arraycopy(this.array, 0, new_array, 0, this.array.length);
         new_array[new_array.length - 1] = n;
 
-        this.intarray = new_array;
+        this.array = new_array;
     }
 
     void insert(int n, int index) {
-        int[] new_array = new int[this.intarray.length + 1];
+        int[] new_array = new int[this.array.length + 1];
 
-        System.arraycopy(this.intarray, 0, new_array, 0, index);
+        System.arraycopy(this.array, 0, new_array, 0, index);
         new_array[index] = n;
-        System.arraycopy(this.intarray, index, new_array, index + 1, this.intarray.length - index);
+        System.arraycopy(this.array, index, new_array, index + 1, this.array.length - index);
 
-        this.intarray = new_array;
+        this.array = new_array;
     }
 
     void join(IntArray numbers) {
-        int[] new_array = new int[this.intarray.length + numbers.intarray.length];
-        System.arraycopy(this.intarray, 0, new_array, 0, this.intarray.length);
-        System.arraycopy(numbers.intarray, 0, new_array, this.intarray.length, numbers.intarray.length);
+        int[] new_array = new int[this.array.length + numbers.array.length];
+        System.arraycopy(this.array, 0, new_array, 0, this.array.length);
+        System.arraycopy(numbers.array, 0, new_array, this.array.length, numbers.array.length);
 
-        this.intarray = new_array;
+        this.array = new_array;
     }
 }
