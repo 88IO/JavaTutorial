@@ -11,8 +11,8 @@ class IntArray {
 
     int sum() {
         int sum = 0;
-        for (int i = 0; i < this.intarray.length; i++) {
-            sum += this.intarray[i];
+        for (int n : this.intarray) {
+            sum += n;
         }
         return sum;
     }
@@ -47,9 +47,9 @@ class IntArray {
 
     int max() {
         int max = this.intarray[0];
-        for (int i = 1; i < this.intarray.length; i++) {
-            if (max < this.intarray[i]) {
-                max = this.intarray[i];
+        for (int n : this.intarray) {
+            if (max < n) {
+                max = n;
             }
         }
         return max;
@@ -57,9 +57,9 @@ class IntArray {
 
     int min() {
         int min = this.intarray[0];
-        for (int i = 1; i < this.intarray.length; i++) {
-            if (min > this.intarray[i]) {
-                min = this.intarray[i];
+        for (int n : this.intarray) {
+            if (min > n) {
+                min = n;
             }
         }
         return min;
