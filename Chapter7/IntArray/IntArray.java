@@ -46,7 +46,7 @@ class IntArray {
     }
 
     int max() {
-        int max = this.array[0];
+        int max = Integer.MIN_VALUE;
         for (int n : this.array) {
             if (max < n) {
                 max = n;
@@ -56,7 +56,7 @@ class IntArray {
     }
 
     int min() {
-        int min = this.array[0];
+        int min = Integer.MAX_VALUE;
         for (int n : this.array) {
             if (min > n) {
                 min = n;
@@ -66,29 +66,29 @@ class IntArray {
     }
 
     void add(int n) {
-        int[] new_array = new int[this.array.length + 1];
+        int[] newArray = new int[this.array.length + 1];
 
-        System.arraycopy(this.array, 0, new_array, 0, this.array.length);
-        new_array[new_array.length - 1] = n;
+        System.arraycopy(this.array, 0, newArray, 0, this.array.length);
+        newArray[newArray.length - 1] = n;
 
-        this.array = new_array;
+        this.array = newArray;
     }
 
     void insert(int n, int index) {
-        int[] new_array = new int[this.array.length + 1];
+        int[] newArray = new int[this.array.length + 1];
 
-        System.arraycopy(this.array, 0, new_array, 0, index);
-        new_array[index] = n;
-        System.arraycopy(this.array, index, new_array, index + 1, this.array.length - index);
+        System.arraycopy(this.array, 0, newArray, 0, index);
+        newArray[index] = n;
+        System.arraycopy(this.array, index, newArray, index + 1, this.array.length - index);
 
-        this.array = new_array;
+        this.array = newArray;
     }
 
     void join(IntArray numbers) {
-        int[] new_array = new int[this.array.length + numbers.array.length];
-        System.arraycopy(this.array, 0, new_array, 0, this.array.length);
-        System.arraycopy(numbers.array, 0, new_array, this.array.length, numbers.array.length);
+        int[] newArray = new int[this.array.length + numbers.array.length];
+        System.arraycopy(this.array, 0, newArray, 0, this.array.length);
+        System.arraycopy(numbers.array, 0, newArray, this.array.length, numbers.array.length);
 
-        this.array = new_array;
+        this.array = newArray;
     }
 }

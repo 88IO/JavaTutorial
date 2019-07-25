@@ -19,8 +19,11 @@ class Complex {
 
     private String dbl2str(double d, boolean isInPlus) {
         if (d > 0) {
-            if (isInPlus)  return "+ " + BigDecimal.valueOf(d).toPlainString();
-            return BigDecimal.valueOf(d).toPlainString();
+            if (isInPlus) {
+                return "+ " + BigDecimal.valueOf(d).toPlainString();
+            } else {
+                return BigDecimal.valueOf(d).toPlainString();
+            }
         } else if (d < 0) {
             return "- " + BigDecimal.valueOf(Math.abs(d)).toPlainString();
         } else {
@@ -39,8 +42,7 @@ class Complex {
             if (this.imaginary == 0) {
                 return dbl2str(this.real, false);
             } else {
-                return dbl2str(this.real, false) + " "
-                        + dbl2str(this.imaginary, true) + "i";
+                return dbl2str(this.real, false) + " " + dbl2str(this.imaginary, true) + "i";
             }
         }
     }
@@ -66,9 +68,9 @@ class Complex {
     void div(Complex c) {
         if (c.real == 0 && c.imaginary == 0)  return;
         this.mul(c.conject());
-        double c_aps = Math.pow(c.real, 2) + Math.pow(c.imaginary, 2);
-        this.real /= c_aps;
-        this.imaginary /= c_aps;
+        double cAbsSquare = Math.pow(c.real, 2) + Math.pow(c.imaginary, 2);
+        this.real /= cAbsSquare;
+        this.imaginary /= cAbsSquare;
     }
 
     Complex conject() {
